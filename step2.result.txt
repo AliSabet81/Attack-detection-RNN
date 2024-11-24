@@ -1,0 +1,8 @@
+   duration protocol_type service flag  ...  dst_host_srv_serror_rate  dst_host_rerror_rate  dst_host_srv_rerror_rate    label
+0         0           tcp    http   SF  ...                       0.0                   0.0                       0.0  normal.
+1         0           tcp    http   SF  ...                       0.0                   0.0                       0.0  normal.
+2         0           tcp    http   SF  ...                       0.0                   0.0                       0.0  normal.
+3         0           tcp    http   SF  ...                       0.0                   0.0                       0.0  normal.
+4         0           tcp    http   SF  ...                       0.0                   0.0                       0.0  normal.
+
+[5 rows x 42 columns]
