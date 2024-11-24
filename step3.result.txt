@@ -1,0 +1,80 @@
+Purpose:
+    Before training a deep learning model, the dataset needs to be split into:
+
+Training Data: Used for learning patterns in the model.
+Testing Data: Used to evaluate the model's performance on unseen data.
+Splitting Method:
+We used the train_test_split function from scikit-learn. This function randomly splits the data into 80% for training and 20% for testing. Setting random_state=42 ensures that the split is consistent across different runs.
+
+
+output :
+X shape: (12690, 100, 16)
+y shape: (12690,)
+PS C:\Ali\Project\Python\Energy Consumption Prediction> python step3.py
+X_train shape: (10152, 100, 16), y_train shape: (10152,)
+X_test shape: (2538, 100, 16), y_test shape: (2538,)
+X shape: (12690, 100, 16)
+y shape: (12690,)
+
+
+Dimensions of X_train and y_train:
+
+X_train shape: (10152, 100, 16)
+Contains 10,152 sequences (samples), each with 100 time steps and 16 features.
+y_train shape: (10152,)
+Contains 10,152 labels corresponding to the training samples (0 for normal, 1 for attack).
+Dimensions of X_test and y_test:
+
+X_test shape: (2538, 100, 16)
+Contains 2,538 sequences for testing.
+y_test shape: (2538,)
+Contains 2,538 labels corresponding to the testing samples.
+Original Dimensions of X and y:
+
+X shape: (12690, 100, 16)
+Total number of sequences in the dataset is 12,690.
+y shape: (12690,)
+Total number of labels is also 12,690.
+Analysis:
+This split ensures the model is evaluated on unseen data (test set) to assess its generalizability.
+
+
+
+
+هدف:
+قبل از آموزش مدل یادگیری عمیق، باید داده‌ها را به دو بخش تقسیم کنیم:
+
+داده‌های آموزش (Training): داده‌هایی که مدل از آن‌ها یاد می‌گیرد.
+داده‌های تست (Testing): داده‌هایی که برای ارزیابی عملکرد مدل استفاده می‌شوند.
+روش تقسیم:
+برای این کار از تابع train_test_split از کتابخانه scikit-learn استفاده کردیم. این تابع داده‌ها را به صورت تصادفی به نسبت 80% برای آموزش و 20% برای تست تقسیم کرد. همچنین از مقدار random_state=42 استفاده کردیم تا تقسیم داده‌ها در هر بار اجرا یکسان باشد.
+
+خروجی :
+X shape: (12690, 100, 16)
+y shape: (12690,)
+PS C:\Ali\Project\Python\Energy Consumption Prediction> python step3.py
+X_train shape: (10152, 100, 16), y_train shape: (10152,)
+X_test shape: (2538, 100, 16), y_test shape: (2538,)
+X shape: (12690, 100, 16)
+y shape: (12690,)
+
+ابعاد X_train و y_train:
+
+X_train shape: (10152, 100, 16)
+شامل 10,152 توالی (samples) است که هر توالی 100 گام زمانی و 16 ویژگی دارد.
+y_train shape: (10152,)
+شامل 10,152 برچسب مربوط به داده‌های آموزشی است که مقدار آن‌ها 0 (عادی) یا 1 (حمله) است.
+ابعاد X_test و y_test:
+
+X_test shape: (2538, 100, 16)
+شامل 2,538 توالی برای تست مدل است.
+y_test shape: (2538,)
+شامل 2,538 برچسب مربوط به داده‌های تست است.
+ابعاد اصلی X و y:
+
+X shape: (12690, 100, 16)
+تعداد کل توالی‌ها در داده اصلی 12,690 است.
+y shape: (12690,)
+تعداد کل برچسب‌ها نیز 12,690 است.
+تحلیل:
+تقسیم داده‌ها به این شکل باعث می‌شود مدل با داده‌های جدید (که در تست استفاده می‌شود) ارزیابی شود و قابلیت تعمیم‌پذیری مدل بهتر بررسی شود.
