@@ -1,0 +1,207 @@
+Code Executed:
+The code you ran is designed to train an LSTM (Long Short-Term Memory) model for predicting or classifying time-series data using a recurrent neural network. The model uses different LSTM layers to learn complex features from the input data, along with Dropout layers to prevent overfitting.
+
+Model Details:
+Model Architecture:
+
+The model begins with an LSTM layer, which allows it to capture long-term dependencies in the input sequence.
+For regularization, Dropout layers are included after each LSTM layer, helping to prevent overfitting by randomly setting some of the weights to zero during training.
+Finally, a Dense layer is added to output the final prediction of the model.
+Training Process:
+
+The model was trained on the training dataset. Accuracy and loss were computed at each epoch. Initially, the training accuracy was lower, but over time it improved, and the loss decreased.
+At first, there was a significant difference between the training and validation accuracies, but as training progressed, the gap reduced and the model reached a high accuracy.
+
+
+Output :
+
+Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 32)                  │          12,416 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 32)                  │               0 │
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 32)                  │          12,416 │
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 32)                  │          12,416 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm (LSTM)                          │ (None, 100, 64)             │          20,736 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 32)                  │          12,416 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 100, 64)             │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (None, 32)                  │          12,416 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 32)                  │               0 │
+│ lstm_1 (LSTM)                        │ (None, 32)                  │          12,416 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 (Dropout)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 1)                   │              33 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+│ dense (Dense)                        │ (None, 1)                   │              33 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 33,185 (129.63 KB)
+ Total params: 33,185 (129.63 KB)
+ Trainable params: 33,185 (129.63 KB)
+ Non-trainable params: 0 (0.00 B)
+Epoch 1/10
+80/80 - 7s - 85ms/step - accuracy: 0.8974 - loss: 0.2999 - val_accuracy: 0.7104 - val_loss: 0.8551
+Epoch 2/10
+80/80 - 5s - 59ms/step - accuracy: 0.7904 - loss: 0.5225 - val_accuracy: 0.7104 - val_loss: 0.6397
+Epoch 3/10
+80/80 - 5s - 60ms/step - accuracy: 0.7078 - loss: 0.6061 - val_accuracy: 0.7104 - val_loss: 0.5916
+Epoch 4/10
+80/80 - 5s - 58ms/step - accuracy: 0.8288 - loss: 0.3987 - val_accuracy: 0.7608 - val_loss: 0.3368
+Epoch 5/10
+80/80 - 5s - 60ms/step - accuracy: 0.9664 - loss: 0.1071 - val_accuracy: 0.9929 - val_loss: 0.0342
+Epoch 6/10
+80/80 - 5s - 60ms/step - accuracy: 0.9941 - loss: 0.0302 - val_accuracy: 0.9957 - val_loss: 0.0201
+Epoch 7/10
+80/80 - 5s - 60ms/step - accuracy: 0.9962 - loss: 0.0224 - val_accuracy: 0.9968 - val_loss: 0.0166
+Epoch 8/10
+80/80 - 5s - 62ms/step - accuracy: 0.9970 - loss: 0.0185 - val_accuracy: 0.9980 - val_loss: 0.0130
+Epoch 9/10
+80/80 - 5s - 66ms/step - accuracy: 0.9972 - loss: 0.0161 - val_accuracy: 0.9980 - val_loss: 0.0118
+Epoch 10/10
+Epoch 7/10
+80/80 - 5s - 60ms/step - accuracy: 0.9962 - loss: 0.0224 - val_accuracy: 0.9968 - val_loss: 0.0166
+Epoch 8/10
+80/80 - 5s - 62ms/step - accuracy: 0.9970 - loss: 0.0185 - val_accuracy: 0.9980 - val_loss: 0.0130
+Epoch 9/10
+Epoch 7/10
+80/80 - 5s - 60ms/step - accuracy: 0.9962 - loss: 0.0224 - val_accuracy: 0.9968 - val_loss: 0.0166
+Epoch 8/10
+80/80 - 5s - 62ms/step - accuracy: 0.9970 - loss: 0.0185 - val_accuracy: 0.9980 - val_loss: 0.0130
+Epoch 7/10
+80/80 - 5s - 60ms/step - accuracy: 0.9962 - loss: 0.0224 - val_accuracy: 0.9968 - val_loss: 0.0166
+Epoch 8/10
+Epoch 7/10
+80/80 - 5s - 60ms/step - accuracy: 0.9962 - loss: 0.0224 - val_accuracy: 0.9968 - val_loss: 0.0166
+Epoch 7/10
+80/80 - 5s - 60ms/step - accuracy: 0.9962 - loss: 0.0224 - val_accuracy: 0.9968 - val_loss: 0.0166
+Epoch 7/10
+80/80 - 5s - 60ms/step - accuracy: 0.9962 - loss: 0.0224 - val_accuracy: 0.9968 - val_loss: 0.0166
+Epoch 7/10
+80/80 - 5s - 60ms/step - accuracy: 0.9962 - loss: 0.0224 - val_accuracy: 0.9968 - val_loss: 0.0166
+Epoch 8/10
+80/80 - 5s - 62ms/step - accuracy: 0.9970 - loss: 0.0185 - val_accuracy: 0.9980 - val_loss: 0.0130
+Epoch 9/10
+80/80 - 5s - 66ms/step - accuracy: 0.9972 - loss: 0.0161 - val_accuracy: 0.9980 - val_loss: 0.0118
+Epoch 10/10
+80/80 - 5s - 63ms/step - accuracy: 0.9977 - loss: 0.0153 - val_accuracy: 0.9988 - val_loss: 0.0103
+80/80 - 1s - 9ms/step - accuracy: 0.9988 - loss: 0.0103
+Test Accuracy: 99.88%
+
+
+Accuracy and Loss:
+
+The model achieved an accuracy of 99.88% on the test data at the end of training.
+The loss value dropped to 0.0103, indicating that the model has learned effectively.
+Model Saving Warning:
+
+A warning appeared suggesting that instead of using the HDF5 format for saving the model, it is recommended to use the newer Keras format (.keras). This is due to changes in future Keras versions.
+
+Analysis:
+Good Performance: The accuracy of over 99% indicates that the model is reacting well to the input data and making highly accurate predictions.
+Stable Learning Process: The observed decrease in loss and increase in accuracy during training suggests that the model is learning effectively and optimizing well.
+High Accuracy with Low Risk of Overfitting: The inclusion of Dropout layers helps prevent overfitting, ensuring that the model performs well not just on the training data but also on unseen data.
+
+
+
+
+
+کد شما به منظور آموزش یک مدل LSTM (Long Short-Term Memory) برای پیش‌بینی یا دسته‌بندی داده‌ها با استفاده از شبکه‌های عصبی بازگشتی طراحی شده است. در این مدل از داده‌های سری زمانی استفاده شده است که در آن لایه‌های مختلف LSTM و Dropout به ترتیب برای یادگیری ویژگی‌های پیچیده و جلوگیری از overfitting استفاده می‌شوند.
+
+ساختار مدل:
+
+ابتدا مدل با استفاده از لایه LSTM ساخته شده است. این لایه به مدل اجازه می‌دهد تا روابط طولانی‌مدت در داده‌های ورودی را یاد بگیرد.
+در هر لایه LSTM یک لایه Dropout به منظور جلوگیری از overfitting اضافه شده است. این لایه‌ها به تصادفی صفر کردن برخی از وزن‌ها در طول آموزش کمک می‌کنند.
+در نهایت، یک لایه Dense برای تبدیل خروجی مدل به یک پیش‌بینی نهایی اضافه شده است.
+فرآیند آموزش:
+
+مدل با استفاده از داده‌های آموزشی آموزش داده شده است. دقت و loss در هر epoch محاسبه شده‌اند. در ابتدا، دقت مدل روی داده‌های آموزش پایین‌تر بوده است، اما با گذشت زمان دقت افزایش یافته و loss کاهش پیدا کرده است.
+در ابتدا، دقت مدل روی داده‌های تست (validation) و آموزش (training) تفاوت زیادی داشت، اما پس از چند epoch، این تفاوت کاهش یافت و مدل به دقت بالایی رسید.
+
+
+دقت (Accuracy) و از دست دادن (Loss):
+
+دقت مدل روی داده‌های تست در پایان آموزش به 99.88٪ رسید.
+از دست دادن (loss) مدل به مقدار 0.0103 رسید که نشان‌دهنده‌ی این است که مدل به‌طور مؤثر یاد گرفته است.
+هشدار ذخیره مدل:
+
+یک هشدار وجود داشت که به شما توصیه می‌کند که به‌جای استفاده از فرمت HDF5، از فرمت Keras برای ذخیره مدل استفاده کنید. این توصیه به دلیل تغییرات آینده در نسخه‌های جدید Keras است.
+
+تحلیل:
+
+عملکرد خوب مدل: دقت بالای 99٪ نشان می‌دهد که مدل به خوبی به داده‌های ورودی واکنش نشان داده و پیش‌بینی‌های دقیقی انجام داده است.
+ثبات در فرآیند یادگیری: مشاهده کاهش loss و افزایش دقت در طول آموزش، حاکی از یادگیری موثر و بهینه مدل است.
+دقت بالا و احتمال overfitting پایین: با توجه به استفاده از Dropout در لایه‌ها، مدل در برابر overfitting مقاوم است و می‌تواند در داده‌های جدید نیز عملکرد خوبی داشته باشد.
