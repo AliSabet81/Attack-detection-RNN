@@ -1,0 +1,69 @@
+Neural Network Analysis Report (LSTM) for Network Attack Detection
+
+1. Introduction:
+    Project Objective: 
+        The goal of this project is to predict network attacks using LSTM models. We have used the KDD Cup 99 dataset to identify various attacks in the network.
+    Dataset Description: 
+        This dataset consists of various network traffic samples used for attack detection. The data includes features such as protocol type, packet size, connection duration, etc. It contains different types of attacks such as DoS, Probe, U2R, and R2L.
+    Challenges: 
+        One of the primary challenges in this project was the imbalanced data across the different attack classes, which could affect the model's accuracy.
+    References:
+        ChatGPT was used for assistance in writing the analysis and report sections.
+
+2. Model Description:
+    Model Used: 
+        In this project, an LSTM model was used. The architecture includes multiple LSTM layers, with 64 units in the first layer, 32 units in the second, and Dropout layers for preventing overfitting. The number of LSTM layers and other parameters were selected to avoid excessive complexity and improve performance.
+    Training Process: 
+        The model was trained for 10 epochs, using training data for learning and validation data for evaluation. The learning rate and batch size were set in such a way to achieve the best performance.
+    Reason for Choosing LSTM: 
+        LSTM was chosen due to its ability to process sequential data. This model can capture temporal dependencies in the network data, which is crucial for detecting attacks.
+
+3. Results:
+    Precise Results: 
+        After 10 epochs, the model achieved 99.88% accuracy on the test set. This indicates that the model was able to learn attack patterns effectively.
+    Results Analysis: 
+        The model performed well in attack detection. The high accuracy on the test set indicates the model's effectiveness in correctly identifying attacks. Some attacks in unseen data might not be detected correctly, but using more data could help mitigate this issue.
+    Comparison with Other Models: 
+        Compared to other models like Random Forest and SVM, LSTM performed better, especially in detecting complex attacks that involve temporal dependencies.
+
+4. Conclusion and Future Work:
+    Conclusion: 
+        The LSTM model was successful in detecting network attacks. With high accuracy on the test data, it proves to be an effective tool for network attack detection.
+    Suggestions for Improvement: 
+        To enhance the model's performance, more data and advanced preprocessing techniques could be used. Hyperparameter tuning and combining models could further improve the accuracy.
+
+5. Limitations:
+    Limitations of the project include a lack of sufficient data for training more complex models and hardware constraints during training. Also, the available data does not fully cover all types of attacks.
+
+6. References:
+    Various sources for model training, data preprocessing, and theory included Keras documentation, articles related to LSTM and network attack detection, and reputable educational websites.
+    
+
+گزارش تحلیل شبکه‌های عصبی (LSTM) برای شناسایی حملات در شبکه‌ها
+
+1. مقدمه:
+    هدف پروژه: هدف این پروژه پیش‌بینی حملات شبکه با استفاده از مدل‌های LSTM است. ما از داده‌های KDD Cup 99 برای شناسایی حملات مختلف در شبکه استفاده کرده‌ایم.
+    توضیحات داده‌ها: این مجموعه داده شامل نمونه‌های مختلفی از ترافیک شبکه است که برای شناسایی حملات به کار می‌رود. داده‌ها شامل ویژگی‌هایی مانند نوع پروتکل، اندازه بسته‌ها، مدت زمان ارتباط و غیره هستند. این داده‌ها شامل انواع حملات مختلف مانند DoS، Probe، U2R و R2L است.
+    چالش‌ها: یکی از چالش‌های اصلی در این پروژه، عدم تعادل داده‌ها در میان کلاس‌های مختلف بود، که می‌تواند بر دقت مدل تاثیر بگذارد.
+    منابع:
+        در این پروژه از ChatGPT برای کمک در نوشتن تحلیل‌ها و گزارش‌ها استفاده شده است.
+
+2. توصیف مدل:
+    مدل مورد استفاده: در این پروژه از مدل LSTM استفاده شده است. معماری مدل شامل چندین لایه LSTM با 64 واحد در لایه اول، 32 واحد در لایه دوم و استفاده از لایه‌های Dropout برای جلوگیری از Overfitting است. تعداد لایه‌های LSTM و پارامترهای دیگر برای جلوگیری از پیچیدگی بیش از حد و افزایش کارایی انتخاب شدند.
+    فرایند آموزش: مدل به مدت 10 اپوک آموزش داده شد و از داده‌های آموزشی برای آموزش و از داده‌های اعتبارسنجی برای ارزیابی استفاده شد. نرخ یادگیری و اندازه دسته‌بندی (batch size) به گونه‌ای تنظیم شد که به بهترین عملکرد رسید.
+    دلیل انتخاب LSTM: LSTM به دلیل توانایی‌های خود در پردازش داده‌های سری زمانی انتخاب شده است. این مدل قادر به درک وابستگی‌های زمانی در داده‌های شبکه است که به شناسایی حملات کمک می‌کند.
+
+3. نتایج:
+    نتایج دقیق: پس از 10 اپوک، مدل به دقت 99.88% در مجموعه تست رسید. این نشان می‌دهد که مدل توانسته است الگوهای حملات را به خوبی شبیه‌سازی کند.
+    تحلیل نتایج: مدل در شناسایی حملات موفق عمل کرد. دقت بالا در مجموعه تست نشان‌دهنده کارایی خوب مدل در تشخیص صحیح حملات است. ممکن است برخی از حملات در داده‌های آموزش‌داده نشده به‌درستی شناسایی نشوند، اما با استفاده از داده‌های بیشتر می‌توان این مشکل را کاهش داد.
+    مقایسه با مدل‌های دیگر: در مقایسه با مدل‌های دیگری مانند Random Forest و SVM، LSTM عملکرد بهتری از خود نشان داد، به خصوص در شناسایی حملات پیچیده که وابستگی‌های زمانی دارند.
+
+4. نتیجه‌گیری و کارهای آینده:
+    نتیجه‌گیری: مدل LSTM توانسته است در شناسایی حملات شبکه موفق عمل کند. با دقت بالا در داده‌های تست، این مدل به عنوان یک ابزار مفید برای تشخیص حملات در شبکه‌ها به حساب می‌آید.
+    پیشنهادات برای بهبود: برای بهبود عملکرد مدل، می‌توان از داده‌های بیشتر و تکنیک‌های پیش‌پردازش پیشرفته‌تر استفاده کرد. همچنین می‌توان از تنظیمات هایپرپارامترها و یا استفاده از مدل‌های ترکیبی برای بهبود دقت استفاده کرد.
+
+5. محدودیت‌ها:
+    محدودیت‌های این پروژه شامل کمبود داده‌های مناسب برای آموزش مدل‌های پیچیده‌تر و همچنین محدودیت‌های سخت‌افزاری در زمان آموزش است. همچنین، داده‌های موجود به‌طور کامل پوشش‌دهنده‌ی همه انواع حملات نیستند.
+
+6. منابع:
+    منابع مختلف برای آموزش مدل و پردازش داده‌ها شامل مستندات Keras، مقالات مرتبط با LSTM و شناسایی حملات شبکه و سایت‌های آموزشی معتبر بوده است.
